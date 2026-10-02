@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas 7: Grafik Kehadiran</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Tugas 7: Grafik Kehadiran</h1>
+<div class="hasil">
+<script>
+
+var hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat"];
+var jumlah = [];
+for (var i = 0; i < hari.length; i++) {
+    jumlah[i] = parseInt(window.prompt("Jumlah mahasiswa masuk hari " + hari[i]));
+}
+
+document.write("<h2>Grafik Jumlah Kehadiran Mahasiswa</h2>");
+for (var i = 0; i < hari.length; i++) {
+    var batang = "";
+    for (var j = 0; j < jumlah[i]; j++) {
+        batang += "x";
+    }
+    document.write(hari[i] + ": " + batang + "<br />");
+}
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>

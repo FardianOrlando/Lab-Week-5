@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan 2: Looping</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Latihan 2: Looping</h1>
+<div class="hasil">
+<script>
+
+var jumlahMhs = window.prompt("Jumlah");
+for (var i = 1; i <= jumlahMhs; i++) {
+    var nama = window.prompt("Nama");
+    var uts = window.prompt("UTS");
+    var uas = window.prompt("UAS");
+    var tugas = window.prompt("Tugas");
+
+    document.write("<br /><br />" + i + ". " + nama + "<br />");
+    document.write("Tugas: " + tugas);
+    document.write("<br />UTS: " + uts);
+    document.write("<br />UAS: " + uas);
+}
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>

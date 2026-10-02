@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan 1: IF...ELSE & Function</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Latihan 1: IF...ELSE & Function</h1>
+<div class="hasil">
+<script>
+
+function cekNilai(nilai) {
+    if (nilai >= 60) {
+        return "Lulus";
+    } else {
+        return "Gagal";
+    }
+}
+
+var nama = window.prompt("nama");
+var nilai = window.prompt("nilai");
+alert(cekNilai(nilai));
+document.write(nama + " dinyatakan <b>" + cekNilai(nilai) + "</b> (nilai: " + nilai + ")");
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas 1: Grade UMN</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Tugas 1: Grade UMN</h1>
+<div class="hasil">
+<script>
+
+// Ketentuan grade UMN
+function getGrade(nilai) {
+    if (nilai >= 85) return "A";
+    else if (nilai >= 80) return "A-";
+    else if (nilai >= 75) return "B+";
+    else if (nilai >= 70) return "B";
+    else if (nilai >= 65) return "B-";
+    else if (nilai >= 60) return "C+";
+    else if (nilai >= 55) return "C";
+    else if (nilai >= 40) return "D";
+    else return "E";
+}
+
+var nilai = parseFloat(window.prompt("Masukkan nilai (0-100)"));
+if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+    document.write("Nilai tidak valid. Muat ulang halaman dan masukkan angka 0-100.");
+} else {
+    document.write("Nilai: " + nilai + "<br />Grade: <b>" + getGrade(nilai) + "</b>");
+}
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>

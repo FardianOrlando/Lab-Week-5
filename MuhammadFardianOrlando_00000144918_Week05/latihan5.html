@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas 5: Bilangan Ganjil</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Tugas 5: Bilangan Ganjil</h1>
+<div class="hasil">
+<script>
+
+var angka = parseInt(window.prompt("Masukkan angka"));
+document.write("Bilangan ganjil dari 1 sampai " + angka + ":<br />");
+var hasil = [];
+for (var i = 1; i <= angka; i++) {
+    if (i % 2 !== 0) hasil.push(i);
+}
+document.write(hasil.join(", "));
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>

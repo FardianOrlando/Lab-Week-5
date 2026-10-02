@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas 2: Nilai Akhir & Grade</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="nav" href="index.html">&larr; Kembali ke menu</a>
+<h1>Tugas 2: Nilai Akhir & Grade</h1>
+<div class="hasil">
+<script>
+
+function getGrade(nilai) {
+    if (nilai >= 85) return "A";
+    else if (nilai >= 80) return "A-";
+    else if (nilai >= 75) return "B+";
+    else if (nilai >= 70) return "B";
+    else if (nilai >= 65) return "B-";
+    else if (nilai >= 60) return "C+";
+    else if (nilai >= 55) return "C";
+    else if (nilai >= 40) return "D";
+    else return "E";
+}
+
+// Bobot: Tugas 40%, UTS 25%, UAS 35%
+function hitungNilaiAkhir(tugas, uts, uas) {
+    var total = (tugas * 0.4) + (uts * 0.25) + (uas * 0.35);
+    return Math.round(total * 100) / 100;
+}
+
+var jumlahMhs = parseInt(window.prompt("Jumlah mahasiswa"));
+for (var i = 1; i <= jumlahMhs; i++) {
+    var nama = window.prompt("Nama mahasiswa ke-" + i);
+    var tugas = parseFloat(window.prompt("Nilai Tugas"));
+    var uts = parseFloat(window.prompt("Nilai UTS"));
+    var uas = parseFloat(window.prompt("Nilai UAS"));
+    var akhir = hitungNilaiAkhir(tugas, uts, uas);
+
+    document.write(i + ". " + nama + "<br />");
+    document.write("Tugas: " + tugas + "<br />");
+    document.write("UTS: " + uts + "<br />");
+    document.write("UAS: " + uas + "<br />");
+    document.write("Nilai Akhir: " + akhir + "<br />");
+    document.write("Grade: " + getGrade(akhir) + "<br /><br />");
+}
+</script>
+</div>
+
+<div class="music-control" aria-hidden="true">
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="VidsNimage/ReDreaming Angel - Sān-Z - Topic (128k).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+  }
+});
+</script>
+</body></html>
